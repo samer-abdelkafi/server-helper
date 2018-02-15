@@ -17,12 +17,7 @@ module.exports = webpackMerge(commonConfig({ env: ENV }), {
         proxy: [{
             context: [
                 /* jhipster-needle-add-entity-to-webpack - JHipster will add entity api paths here */
-                '/api',
-                '/management',
-                '/swagger-resources',
-                '/v2/api-docs',
-                '/h2-console',
-                '/auth'
+                '/api'
             ],
             target: 'http://127.0.0.1:8080',
             secure: false
@@ -32,9 +27,9 @@ module.exports = webpackMerge(commonConfig({ env: ENV }), {
         }
     },
     entry: {
-        polyfills: './src/main/webapp/app/polyfills',
+        polyfills: './src/main/webapp/polyfills',
         global: './src/main/webapp/content/css/global.css',
-        main: './src/main/webapp/app/app.main'
+        main: './src/main/webapp/main'
     },
     output: {
         path: utils.root('target/www'),
@@ -83,7 +78,7 @@ module.exports = webpackMerge(commonConfig({ env: ENV }), {
             utils.root('src/test'),
         ]),
         new WebpackNotifierPlugin({
-            title: 'JHipster',
+            title: 'ServerHelper',
             contentImage: path.join(__dirname, 'logo-jhipster.png')
         })
     ]

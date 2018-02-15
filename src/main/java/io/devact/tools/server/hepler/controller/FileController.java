@@ -24,6 +24,7 @@ import java.util.stream.Stream;
 
 @Slf4j
 @RestController
+@RequestMapping("api")
 public class FileController {
 
 
