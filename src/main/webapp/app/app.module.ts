@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 
 import {AppComponent} from './app.component';
 import {HomeModule} from "./home/home.module";
+import {DirectoryModule} from "./directory/directory.module";
 import {PageNotFoundComponent} from './not-found.component';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
@@ -26,7 +27,8 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
         MatIconModule,
 
         AppRoutingModule,
-        HomeModule
+        HomeModule,
+        DirectoryModule
     ],
     exports: [
         MatToolbarModule,
