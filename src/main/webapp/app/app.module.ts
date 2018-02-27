@@ -2,15 +2,14 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {AppRoutingModule} from './app-routing.module';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCheckboxModule} from '@angular/material'
+import {MatButtonModule, MatToolbarModule, MatIconModule} from '@angular/material'
 import { Router } from '@angular/router';
 
 
 import {AppComponent} from './app.component';
 import {HomeModule} from "./home/home.module";
 import {PageNotFoundComponent} from './not-found.component';
-
-
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 
 
@@ -23,15 +22,21 @@ import {PageNotFoundComponent} from './not-found.component';
         BrowserModule,
         NoopAnimationsModule,
         MatButtonModule,
-        MatCheckboxModule,
+        MatToolbarModule,
+        MatIconModule,
+
         AppRoutingModule,
         HomeModule
     ],
     exports: [
-        MatButtonModule,
-        MatCheckboxModule
+        MatToolbarModule,
+        MatToolbarModule,
+        MatIconModule
     ],
-    providers: [],
+    providers: [
+        { provide: LocationStrategy, useClass: HashLocationStrategy }
+    ],
+
     bootstrap: [AppComponent]
 })
 export class AppModule {
