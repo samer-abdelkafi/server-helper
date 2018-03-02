@@ -1,9 +1,32 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {DirectoryService} from "./directory.service";
+import { Observable } from 'rxjs/Observable';
+
+import {File} from "./file"
+
+
+
 
 @Component({
-    template: `
-        <h3>directory</h3>
-    `
+    templateUrl: './directory.html'
 })
-export class DirectoryComponent {
+export class DirectoryComponent implements OnInit {
+
+    files$: Observable<File[]>;
+
+    constructor(private service: DirectoryService) {
+    }
+
+    getFiles() {
+        this.files$ = this.service.getFiles();
+            //
+            // .subscribe(
+            //     resultArray => this.files$ = resultArray,
+            //     error => console.log("Error :: " + error)
+            // )
+    }
+
+    ngOnInit() {
+        this.getFiles();
+    }
 }
