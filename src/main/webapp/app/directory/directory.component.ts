@@ -8,7 +8,8 @@ import {File} from "./file"
 
 
 @Component({
-    templateUrl: './directory.html'
+    templateUrl: './directory.html',
+    styleUrls: ['./directory.css']
 })
 export class DirectoryComponent implements OnInit {
 
