@@ -1,10 +1,9 @@
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DirectoryComponent }       from './directory.component';
+import { FileComponent }       from './file.component';
 
 const directoryRoutes: Routes = [
-    { path: 'directory', redirectTo: 'directory1'},
-    { path: 'directory1', component: DirectoryComponent }
+    { path: 'file', component: FileComponent }
 ];
 
 @NgModule({
@@ -17,4 +16,4 @@ const directoryRoutes: Routes = [
     providers: [
     ]
 })
-export class DirectoryRoutingModule {}
+export class FileRoutingModule {}

@@ -7,6 +7,7 @@ import {HomeComponent} from './home/home.component'
 import {DirectoryComponent} from './directory/directory.component'
 
 import { SelectivePreloadingStrategy } from './selective-preloading-strategy';
+import {FileComponent} from "./file/file.component";
 
 const appRoutes: Routes = [
 
@@ -14,6 +15,11 @@ const appRoutes: Routes = [
         path: 'directory',
         component: DirectoryComponent,
         data: {title: 'Directory Page'}
+    },
+    {
+        path: 'file/:path',
+        component: FileComponent,
+        data: {title: 'file'}
     },
 
     {

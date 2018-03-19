@@ -20,11 +20,11 @@ export class DirectoryComponent implements OnInit {
 
     getFiles() {
         this.files$ = this.service.getFiles();
-            //
-            // .subscribe(
-            //     resultArray => this.files$ = resultArray,
-            //     error => console.log("Error :: " + error)
-            // )
+        //
+        // .subscribe(
+        //     resultArray => this.files$ = resultArray,
+        //     error => console.log("Error :: " + error)
+        // )
     }
 
     ngOnInit() {

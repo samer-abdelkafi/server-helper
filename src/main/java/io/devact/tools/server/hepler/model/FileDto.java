@@ -9,14 +9,14 @@ public class FileDto {
 
     private String path;
 
-    private long size;
+    private String size;
 
     private boolean isDirectory;
 
     private long lastModifDate;
 
 
-    public FileDto(String name, String path, long size, boolean isDirectory, long lastModifDate) {
+    public FileDto(String name, String path, String size, boolean isDirectory, long lastModifDate) {
         this.name = name;
         this.path = path;
         this.size = size;

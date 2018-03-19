@@ -3,6 +3,7 @@ package io.devact.tools.server.hepler.controller;
 import io.devact.tools.server.hepler.model.Event;
 import io.devact.tools.server.hepler.model.FileDto;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -45,7 +46,7 @@ public class FileController {
         String serverPath = getPath();
         for (File f : new File(serverPath, path).listFiles()) {
             String relativePath = new File(serverPath).toURI().relativize(f.toURI()).getPath();
-            files.add(new FileDto(f.getName(), FilenameUtils.normalizeNoEndSeparator(relativePath), f.length(),
+            files.add(new FileDto(f.getName(), FilenameUtils.normalizeNoEndSeparator(relativePath), FileUtils.byteCountToDisplaySize(f.length()),
                     f.isDirectory(), f.lastModified()));
         }
         return files;

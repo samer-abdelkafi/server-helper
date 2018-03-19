@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {DirectoryService} from "./file.service";
+import {FileService} from "./file.service";
 import { Observable } from 'rxjs/Observable';
-
-
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import 'rxjs/add/operator/switchMap';
+import {File} from "../directory/file";
 
 
 
@@ -12,25 +13,20 @@ import { Observable } from 'rxjs/Observable';
 })
 export class FileComponent implements OnInit {
 
-    files$: Observable<File[]>;
+    file$: Observable<File>;
 
-    constructor(private service: DirectoryService) {
+    constructor(private service: FileService, private router: Router, private route: ActivatedRoute) {
     }
 
-    getFiles() {
-        //this.files$ = this.service.getFiles();
-            //
-            // .subscribe(
-            //     resultArray => this.files$ = resultArray,
-            //     error => console.log("Error :: " + error)
-            // )
+    getFile() {
+        this.file$ = this.route.paramMap
+            .switchMap((params: ParamMap) =>
+                this.service.getFile(params.get('path')));
     }
 
     ngOnInit() {
+        this.getFile();
 
-        this.hero$ = this.route.paramMap
-            .switchMap((params: ParamMap) =>
-                this.service.getHero(params.get('id')));
-        this.getFiles();
+
     }
 }

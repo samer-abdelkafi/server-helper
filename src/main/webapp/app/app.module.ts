@@ -19,6 +19,7 @@ import {HomeModule} from "./home/home.module";
 import {DirectoryModule} from "./directory/directory.module";
 import {PageNotFoundComponent} from './not-found.component';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import {FileModule} from "./file/file.module";
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
         MatListModule,
         AppRoutingModule,
         HomeModule,
-        DirectoryModule
+        DirectoryModule,
+        FileModule
     ],
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy }

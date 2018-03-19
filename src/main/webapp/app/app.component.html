@@ -1,11 +1,21 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <mat-toolbar color="primary">
+    <button mat-button routerLink="/home">
+        <mat-icon>toys</mat-icon>
+        <span>Server Helper</span>
+    </button>
 
-    <span>Server Helper</span>
+    <button mat-button routerLink="/directory">
+        Explore
+    </button>
+
     <span class="example-spacer"></span>
-    <mat-icon routerLink="/directory" routerLinkActive="active" class="example-icon">folder</mat-icon>
-    <mat-icon routerLink="/home" routerLinkActive="active" class="example-icon">home</mat-icon>
-    <mat-icon>info</mat-icon>
+
+    <button mat-button>
+        GitHub
+    </button>
+
+
 </mat-toolbar>
 <router-outlet></router-outlet>
 
