@@ -9,4 +9,5 @@ public class ServerHelperApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ServerHelperApplication.class, args);
 	}
+
 }
